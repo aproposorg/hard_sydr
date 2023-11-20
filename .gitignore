@@ -30,3 +30,32 @@
 *.exe
 *.out
 *.app
+
+.vscode/
+
+
+# black list all the file
+ws_hls/*
+ws_vivado/*
+._*
+
+# white list selected 
+!ws_hls/source/
+!ws_hls/source/*
+
+!ws_hls/include/
+!ws_hls/include/*
+
+!ws_hls/*.tcl
+!ws_vivado/*.tcl
+
+# allow the zip file such as the vivado project achieve
+!ws_vivado/*.zip
+
+
+# include the generated HLS IP
+!hls_out/
+# include the bit and hwh generated 
+!vivado_out/
+
+*.log
