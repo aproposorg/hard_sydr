@@ -3,8 +3,8 @@
 
 <img align="right" src="https://raw.githubusercontent.com/aproposorg/KV260-PYNQ-tutorial/main/image/HWSYDR.png" height="140">
 
-- This work is the extension of Python-based GNSS receiver design called SyDR https://github.com/aproposorg/sydr
-- It extends the software design to the FPGA domain which allows the algorithm to be run at the hardware, thus the design called Hard SyDR
+- This work is an extension of Python-based GNSS receiver design called SyDR https://github.com/aproposorg/sydr
+- It extends the software design to the FPGA domain, which allows the algorithm to be run at the hardware, thus the design called Hard SyDR
 
 - The design is based on Xilinx KV260 board. 
 
@@ -42,7 +42,7 @@
     └── make_hard_sydr_block_design.tcl
 
 ```
-The repo contains two workspace, the first one is `ws_hls` that HLS project can be build at here. It contains the `tcl` script to run the design flow of Xilinx HLS. In the end of HLS workflow, the hard SyDR HLS IP can be generated and saved to 
+The repo contains two workspaces, the first one is `ws_hls` the HLS project can be built here. It contains the `tcl` script to run the design flow of Xilinx HLS. In the end of HLS workflow, the hard SyDR HLS IP can be generated and saved to 
 ```
 ├── hls_out
 │   └── hls_ip_hsydr_XXXX.zip
@@ -57,7 +57,7 @@ When complect the HLS workflow. We can start to generate the `bitstream` of the 
 We included the `tcl` file that you can build the project rapidly, more on this in the coming section. 
 
 ---
-For those user who want to run the design at the board straightaway, we prepared the compiled file that you can run the design at the `PYNQ` environment out of box.
+For those users who want to run the design on the board straightaway, we prepared the compiled file so that you can run the design at the `PYNQ` environment out of the box.
 ```
 ├── ws_pynq
 │   ├── hard_sydr_FPGA.bit
@@ -80,11 +80,11 @@ To proceed with the running or building of the design. Please make sure your sof
 
 - The version of PYNQ for KV260 should be 3.0.X, https://github.com/Xilinx/Kria-PYNQ/releases/tag/v3.0
 
-## Run the Design, out of box
+## Run the Design out of the box
 
-Go to your KV260 board. Make sure it running the PYNQ 3.0.X and with Jupeter lab open. 
+Go to your KV260 board. Make sure it running the PYNQ 3.0.X and with Jupiter lab open. 
 
-Copy all the file from `ws_pynq` directory, run the `hard_sydr_jup.ipynb` file. 
+Copy all the files from `ws_pynq` directory, and run the `hard_sydr_jup.ipynb` file. 
 
 ## Steps to build the Design
 
@@ -92,7 +92,7 @@ Copy all the file from `ws_pynq` directory, run the `hard_sydr_jup.ipynb` file.
 
 - Go to your x86 machine. Go to `ws_hls` and run the workflow as `vitis_hls -f run_hard_sydr_hls.tcl`. 
 - Make sure you inspect the `tcl` file, you can choose the option for co-simulation. 
-When compilation finish, you will see your IP generated in `hls_out` folder with its timestamp.
+When compilation finishes, you will see your IP generated in `hls_out` folder with its timestamp.
 
 ```
 ├── hls_out
@@ -104,11 +104,11 @@ When compilation finish, you will see your IP generated in `hls_out` folder with
 - Go to your x86 machine. Open Vivado in GUI mode. 
 - Create a new project with KV260 as the target board. 
 - Proceed the project creation without adding the source file. 
-- Now you entered a new layout, on your left you can see the steps for compilation flow, now choose the `tcl` file in our repo and run 
+- Now you have entered a new layout, on your left you can see the steps for compilation flow now choose the `tcl` file in our repo and run 
     `Tool -> Run TCL scrips -> make_hard_sydr_block_design.tcl`
 - Now add the IP into your system. Note, it might be tricky here. 
 - From the left panel, open `IP catalog`.
-- Right click to add `IP repository`, then right-click to `Add IP to repository`
+- Right-click to add `IP repository`, then right-click to `Add IP to repository`
 - Add `hls_ip_hsydr_2311162147.zip` into the block diagram you just created from `tcl` file
 - Make the connections
     ```
@@ -121,9 +121,9 @@ When compilation finish, you will see your IP generated in `hls_out` folder with
     ```
 - Now validate the design, or press F6
 - Click the block design from the source, and generate HDL wrapper
-- From the left panel, clock `Generate bitstream`
-- When bit stream generated, export it to a location
-- In the file system of the Vivado project, search for `design_1.hwh` file, copy this and rename it as same as the name of bitstream
+- From the left panel, click `Generate bitstream`
+- When the bit stream is generated, export it to a location
+- In the file system of the Vivado project, search for `design_1.hwh` file, copy this and rename it as same as the name of the bitstream
 - Build finished, you can use the `.bit` and `.hwh` files to run your design at PYNQ environment.  
 
 
