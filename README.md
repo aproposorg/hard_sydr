@@ -6,8 +6,26 @@
 - This work is an extension of Python-based GNSS receiver design called SyDR https://github.com/aproposorg/sydr
 - It extends the software design to the FPGA domain, which allows the algorithm to be run at the hardware, thus the design called Hard SyDR
 
-- The design is based on Xilinx KV260 board. 
+- The design is based on Xilinx KV260 board.
 
+For additional details on the architecture and a more in-depth analysis of the results, you can refer to our publication:
+
+Grenier, A., Lei, J., Damsgaard, H. J., Quintana-Ortí, E. S., Ometov, A., Lohan, E. S., & Nurmi, J. (2024). Hard SyDR: A Benchmarking Environment for Global Navigation Satellite System Algorithms. Sensors, 24(2), 409.
+
+We would appreciate if you could cite this reference in case you wish to mention Hard SyDR in your work!
+
+```
+@article{grenier2024hard,
+  title={Hard SyDR: A Benchmarking Environment for Global Navigation Satellite System Algorithms},
+  author={Grenier, Antoine and Lei, Jie and Damsgaard, Hans Jakob and Quintana-Ort{\'\i}, Enrique S and Ometov, Aleksandr and Lohan, Elena Simona and Nurmi, Jari},
+  journal={Sensors},
+  volume={24},
+  number={2},
+  pages={409},
+  year={2024},
+  publisher={MDPI}
+}
+```
 
 ## Structure of the repo
 
